@@ -1,5 +1,5 @@
 # YouTube Video İndirici - Gerekli Kütüphaneler
-# Python 3.7+ gerektirir
+# Python 3.8+ gerektirir
 
 # YouTube video indirme için ana kütüphane
 yt-dlp>=2023.12.30

@@ -1,6 +1,6 @@
 # 🎬 YouTube Video İndirici
 
-[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![yt-dlp](https://img.shields.io/badge/yt--dlp-latest-red.svg)](https://github.com/yt-dlp/yt-dlp)
 
@@ -18,7 +18,7 @@ Python ile yazılmış kullanımı kolay, güçlü bir YouTube video indirme ara
 
 ## 📋 Gereksinimler
 
-- Python 3.7 veya üzeri
+- Python 3.8 veya üzeri
 - FFmpeg (ses dönüştürme için)
 
 ### FFmpeg Kurulumu
