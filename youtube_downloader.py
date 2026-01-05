@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 YouTube Video İndirme Aracı
 yt-dlp kütüphanesi kullanarak YouTube videolarını indirir
@@ -7,6 +8,12 @@ yt-dlp kütüphanesi kullanarak YouTube videolarını indirir
 import yt_dlp
 import sys
 import os
+
+# Windows konsolunda Türkçe karakter desteği için
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 
 def download_video(url, output_path="downloads"):

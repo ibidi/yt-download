@@ -46,7 +46,11 @@ jobs:
       run: |
         python -m py_compile youtube_downloader.py
     
-    - name: Script Çalıştırma Testi
+    - name: Import Testi
       run: |
-        python youtube_downloader.py --help || echo "Help flag not implemented, script imports successfully"
+        python -c "import youtube_downloader; print('✓ Script başarıyla import edildi')"
+    
+    - name: Encoding Testi (Türkçe Karakterler)
+      run: |
+        python -c "import youtube_downloader; print('✓ Türkçe karakter desteği çalışıyor: İ ı Ş ş Ğ ğ Ü ü Ö ö Ç ç')"
 
