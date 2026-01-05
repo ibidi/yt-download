@@ -1,0 +1,10 @@
+# YouTube Video İndirici - Gerekli Kütüphaneler
+# Python 3.7+ gerektirir
+
+# YouTube video indirme için ana kütüphane
+yt-dlp>=2023.12.30
+
+# Not: FFmpeg ayrıca sistem düzeyinde kurulmalıdır
+# macOS: brew install ffmpeg
+# Ubuntu/Debian: sudo apt install ffmpeg
+# Windows: https://ffmpeg.org/download.html

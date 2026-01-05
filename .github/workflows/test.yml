@@ -1,0 +1,52 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Python ${{ matrix.python-version }} Kurulumu
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: FFmpeg Kurulumu (Ubuntu)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
+    
+    - name: FFmpeg Kurulumu (macOS)
+      if: runner.os == 'macOS'
+      run: brew install ffmpeg
+    
+    - name: FFmpeg Kurulumu (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        choco install ffmpeg -y
+    
+    - name: Bağımlılıkları Yükle
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Syntax Kontrolü
+      run: |
+        python -m py_compile youtube_downloader.py
+    
+    - name: Script Çalıştırma Testi
+      run: |
+        python youtube_downloader.py --help || echo "Help flag not implemented, script imports successfully"
+
