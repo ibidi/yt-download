@@ -11,9 +11,11 @@ GitHub'da sağ üstteki "Fork" butonuna tıklayarak projeyi kendi hesabınıza f
 ### 2. Fork'unuzu Klonlayın
 
 ```bash
-git clone https://github.com/KULLANICI_ADINIZ/yt-download.git
+git clone https://github.com/ibidi/yt-download.git
 cd yt-download
 ```
+
+> Not: Yukarıdaki komutta `ibidi` yerine kendi GitHub kullanıcı adınızı yazın.
 
 ### 3. Upstream Repository'yi Ekleyin
 
